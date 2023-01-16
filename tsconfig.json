@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "composite": true,
+        "declaration": true,
+        "declarationMap": true,
+        "strict": true,
+        "module": "Node16",
+        "moduleResolution": "Node16",
+        "experimentalDecorators": true,
+        "target": "es5",
+        "lib": ["ES2017"],
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "esModuleInterop": true,
+        "tsBuildInfoFile": "./.cache/tsBuildInfoFile"
+    },
+    "include": ["./src/**/*.ts"],
+    "exclude": ["node_modules", "src/**/*.test.*"]
+}

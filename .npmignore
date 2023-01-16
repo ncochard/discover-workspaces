@@ -1,0 +1,16 @@
+.idea/
+.vscode/
+.cache/
+node_modules/
+test-projects/
+.eslintrc.json
+.prettierignore
+.prettierrc
+*.log
+tsconfig.json
+tsconfig-eslint.json
+babel.config.js
+*.test.js
+*.test.ts
+*.test.d.ts
+jest.config.js

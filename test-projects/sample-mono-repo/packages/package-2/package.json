@@ -1,0 +1,8 @@
+{
+    "name": "package-2",
+    "version": "1.0.0",
+    "dependencies": {
+        "lib2": "1.0.0",
+        "package-leaf": "1.0.0"
+    }
+}
