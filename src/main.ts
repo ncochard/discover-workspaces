@@ -1,11 +1,10 @@
 import { error } from "./feedback";
 import { getCommand } from "./command";
-import { defaultLogger } from "./default-logger";
-import { workspaceDiscovery } from "./workspace-discovery";
+import { discoverWorkspaces } from "./discover-workspaces";
 
 async function main(): Promise<void> {
     const command = getCommand();
-    const output = await workspaceDiscovery({ logger: defaultLogger })(command);
+    const output = await discoverWorkspaces(command);
     process.stdout.write(JSON.stringify(output, null, "  "));
 }
 

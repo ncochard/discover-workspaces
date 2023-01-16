@@ -1,11 +1,3 @@
-export interface Logger {
-    error: (message: unknown) => void;
-}
-
-export interface WorkspaceDiscoveryDependencies {
-    logger: Logger;
-}
-
 export interface DiscoverWorkspacesInput {
     cwd: string;
 }

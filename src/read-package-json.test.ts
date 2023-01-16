@@ -1,14 +1,10 @@
-import { readPackageJson, ReadPackageJsonDependencies } from "./read-package-json";
+import { readPackageJson } from "./read-package-json";
 import { join } from "path";
-
-const dependencies: ReadPackageJsonDependencies = {
-    logger: console,
-};
 
 describe("readPackageJson", () => {
     it("works for our main package.json", async () => {
         const path = join(__dirname, "..");
-        const pkg = await readPackageJson(dependencies)(path);
+        const pkg = await readPackageJson(path);
         expect(pkg).toBeDefined();
         if (!pkg) {
             throw new Error("Cannot be null");
@@ -20,7 +16,7 @@ describe("readPackageJson", () => {
     });
     it("works for mono-repo test project", async () => {
         const path = join(__dirname, "../test-projects/no-mono-repo");
-        const pkg = await readPackageJson(dependencies)(path);
+        const pkg = await readPackageJson(path);
         expect(pkg).toBeDefined();
         if (!pkg) {
             throw new Error("Cannot be null");
@@ -33,7 +29,7 @@ describe("readPackageJson", () => {
     });
     it("works for sample-mono-repo test project", async () => {
         const path = join(__dirname, "../test-projects/sample-mono-repo");
-        const pkg = await readPackageJson(dependencies)(path);
+        const pkg = await readPackageJson(path);
         expect(pkg).toBeDefined();
         if (!pkg) {
             throw new Error("Cannot be null");

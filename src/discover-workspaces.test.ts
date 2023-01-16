@@ -1,6 +1,7 @@
-import { discoverWorkspaces } from "./discover-workspaces";
 import path, { join } from "path";
 import { DependencyIdentifier, PackageDetails, PackageTypes } from "./types";
+import { discoverWorkspaces } from "./discover-workspaces";
+
 describe("discoverWorkspaces", () => {
     it("works for our main package.json", async () => {
         const cwd = join(__dirname, "..");
@@ -46,6 +47,7 @@ describe("discoverWorkspaces", () => {
         if (!packages) {
             throw new Error("Cannot be null");
         }
+        expect(packages.map(({ directory, ...rest }) => rest)).toMatchSnapshot();
         expect(packages.length).toBe(8);
         const pkgRoot = packages.find(p => p.identifier.name === "sample-mono-repo");
         expectRootPackage(pkgRoot);

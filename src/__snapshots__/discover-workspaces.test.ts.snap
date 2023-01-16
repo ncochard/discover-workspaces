@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`discoverWorkspaces works for sample-mono-repo test project 1`] = `
+[
+  {
+    "dependencies": [],
+    "devDependencies": [],
+    "identifier": {
+      "name": "lib1",
+      "type": 1,
+      "version": "1.0.0",
+    },
+    "packageJson": {
+      "name": "lib1",
+      "version": "1.0.0",
+    },
+    "peerDependencies": [],
+    "scripts": [],
+  },
+  {
+    "dependencies": [],
+    "devDependencies": [],
+    "identifier": {
+      "name": "lib2",
+      "type": 1,
+      "version": "1.0.0",
+    },
+    "packageJson": {
+      "name": "lib2",
+      "version": "1.0.0",
+    },
+    "peerDependencies": [],
+    "scripts": [],
+  },
+  {
+    "dependencies": [
+      {
+        "name": "lib1",
+        "type": 1,
+        "version": "1.0.0",
+      },
+      {
+        "name": "utility",
+        "type": 1,
+        "version": "1.0.0",
+      },
+    ],
+    "devDependencies": [],
+    "identifier": {
+      "name": "package-1",
+      "type": 1,
+      "version": "1.0.0",
+    },
+    "packageJson": {
+      "dependencies": {
+        "lib1": "1.0.0",
+        "utility": "1.0.0",
+      },
+      "name": "package-1",
+      "version": "1.0.0",
+    },
+    "peerDependencies": [],
+    "scripts": [],
+  },
+  {
+    "dependencies": [
+      {
+        "name": "lib2",
+        "type": 1,
+        "version": "1.0.0",
+      },
+      {
+        "name": "package-leaf",
+        "type": 1,
+        "version": "1.0.0",
+      },
+    ],
+    "devDependencies": [],
+    "identifier": {
+      "name": "package-2",
+      "type": 1,
+      "version": "1.0.0",
+    },
+    "packageJson": {
+      "dependencies": {
+        "lib2": "1.0.0",
+        "package-leaf": "1.0.0",
+      },
+      "name": "package-2",
+      "version": "1.0.0",
+    },
+    "peerDependencies": [],
+    "scripts": [],
+  },
+  {
+    "dependencies": [
+      {
+        "name": "lodash",
+        "type": 2,
+        "version": "^4.17.21",
+      },
+    ],
+    "devDependencies": [],
+    "identifier": {
+      "name": "package-leaf",
+      "type": 1,
+      "version": "1.0.0",
+    },
+    "packageJson": {
+      "dependencies": {
+        "lodash": "^4.17.21",
+      },
+      "name": "package-leaf",
+      "version": "1.0.0",
+    },
+    "peerDependencies": [],
+    "scripts": [],
+  },
+  {
+    "dependencies": [
+      {
+        "name": "lodash",
+        "type": 2,
+        "version": "4.17.21",
+      },
+    ],
+    "devDependencies": [
+      {
+        "name": "rimraf",
+        "type": 2,
+        "version": "^3.0.2",
+      },
+    ],
+    "identifier": {
+      "name": "sample-mono-repo",
+      "type": 0,
+      "version": "1.0.0",
+    },
+    "packageJson": {
+      "dependencies": {
+        "lodash": "4.17.21",
+      },
+      "devDependencies": {
+        "rimraf": "^3.0.2",
+      },
+      "name": "sample-mono-repo",
+      "version": "1.0.0",
+      "workspaces": [
+        "packages/*",
+        "packages/libs/*",
+        "packages/utilities/utility",
+      ],
+    },
+    "peerDependencies": [],
+    "scripts": [],
+  },
+  {
+    "dependencies": [
+      {
+        "name": "package-1",
+        "type": 1,
+        "version": "1.0.0",
+      },
+      {
+        "name": "package-2",
+        "type": 1,
+        "version": "1.0.0",
+      },
+    ],
+    "devDependencies": [],
+    "identifier": {
+      "name": "top-package",
+      "type": 1,
+      "version": "1.0.0",
+    },
+    "packageJson": {
+      "dependencies": {
+        "package-1": "1.0.0",
+        "package-2": "1.0.0",
+      },
+      "name": "top-package",
+      "version": "1.0.0",
+    },
+    "peerDependencies": [],
+    "scripts": [],
+  },
+  {
+    "dependencies": [],
+    "devDependencies": [],
+    "identifier": {
+      "name": "utility",
+      "type": 1,
+      "version": "1.0.0",
+    },
+    "packageJson": {
+      "name": "utility",
+      "version": "1.0.0",
+    },
+    "peerDependencies": [],
+    "scripts": [],
+  },
+]
+`;
