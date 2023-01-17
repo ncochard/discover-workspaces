@@ -63,6 +63,21 @@ exports[`discoverWorkspaces works for sample-mono-repo test project 1`] = `
     "scripts": [],
   },
   {
+    "dependencies": [],
+    "devDependencies": [],
+    "identifier": {
+      "name": "package-10",
+      "type": 1,
+      "version": "1.0.0",
+    },
+    "packageJson": {
+      "name": "package-10",
+      "version": "1.0.0",
+    },
+    "peerDependencies": [],
+    "scripts": [],
+  },
+  {
     "dependencies": [
       {
         "name": "lib2",

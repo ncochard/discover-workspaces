@@ -1,5 +1,5 @@
 import { join } from "path";
-import { expendGlob, expendGlobs, mergeWorkspacePaths } from "./expend-globs";
+import { expendGlob, expendGlobs, isSubFolderOf, mergeWorkspacePaths } from "./expend-globs";
 
 describe("expendGlob", () => {
     it("works for sample mono-repo", async () => {
@@ -32,6 +32,15 @@ describe("expendGlobs", () => {
     });
 });
 
+describe("isSubFolderOf", () => {
+    it("works for sample mono-repo", async () => {
+        const cwd = join(__dirname, "../test-projects/sample-mono-repo");
+        expect(isSubFolderOf(join(cwd, "packages/libs/lib1"), join(cwd, "packages/libs"))).toBeTruthy();
+        expect(isSubFolderOf(join(cwd, "packages/utilities/utility"), join(cwd, "packages/utilities"))).toBeTruthy();
+        expect(isSubFolderOf(join(cwd, "packages/package-10"), join(cwd, "packages/package-1"))).toBeFalsy();
+    });
+});
+
 describe("mergeWorkspacePaths", () => {
     it("works for sample mono-repo", async () => {
         const cwd = join(__dirname, "../test-projects/sample-mono-repo");
@@ -41,6 +50,7 @@ describe("mergeWorkspacePaths", () => {
             "packages/libs/lib2",
             "packages/package-1",
             "packages/package-2",
+            "packages/package-10",
             "packages/package-leaf",
             "packages/top-package",
             "packages/utilities",
@@ -51,6 +61,7 @@ describe("mergeWorkspacePaths", () => {
             "packages/libs/lib2",
             "packages/package-1",
             "packages/package-2",
+            "packages/package-10",
             "packages/package-leaf",
             "packages/top-package",
             "packages/utilities/utility",

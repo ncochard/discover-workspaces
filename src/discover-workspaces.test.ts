@@ -48,7 +48,7 @@ describe("discoverWorkspaces", () => {
             throw new Error("Cannot be null");
         }
         expect(packages.map(({ directory, ...rest }) => rest)).toMatchSnapshot();
-        expect(packages.length).toBe(8);
+        expect(packages.length).toBe(9);
         const pkgRoot = packages.find(p => p.identifier.name === "sample-mono-repo");
         expectRootPackage(pkgRoot);
         const pkgUtility = packages.find(p => p.identifier.name === "utility");
@@ -93,6 +93,12 @@ describe("discoverWorkspaces", () => {
                 { name: "lib2", type: PackageTypes.WorkspacePackage, version: "1.0.0" },
                 { name: "package-leaf", type: PackageTypes.WorkspacePackage, version: "1.0.0" },
             ],
+        });
+        const pkg10 = packages.find(p => p.identifier.name === "package-10");
+        expectPackage(pkg10, {
+            ...defaults,
+            identifier: { name: "package-10", version: "1.0.0", type: PackageTypes.WorkspacePackage },
+            directory: join(__dirname, "../test-projects/sample-mono-repo", "packages/package-10"),
         });
         const lib1 = packages.find(p => p.identifier.name === "lib1");
         expectPackage(lib1, {
